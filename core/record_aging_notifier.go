@@ -26,7 +26,7 @@ func (n *OpenBazaarNode) StartRecordAgingNotifier() {
 	n.RecordAgingNotifier = &recordAgingNotifier{
 		datastore:     n.Datastore,
 		broadcast:     n.Broadcast,
-		intervalDelay: time.Duration(10) * time.Minute,
+		intervalDelay: time.Duration(1) * time.Minute,
 		logger:        logging.MustGetLogger("recordAgingNotifier"),
 	}
 	go n.RecordAgingNotifier.Run()
