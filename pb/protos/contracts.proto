@@ -394,3 +394,7 @@ message SignedListing {
     string hash         = 2;
     bytes signature     = 3;
 }
+
+message VendorFinalizedPayment {
+    string orderID = 1;
+}
