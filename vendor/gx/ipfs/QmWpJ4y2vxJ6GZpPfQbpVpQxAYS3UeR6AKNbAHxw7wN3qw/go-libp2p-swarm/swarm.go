@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"runtime/debug"
 	"strings"
 	"sync"
 	"time"
@@ -244,6 +245,8 @@ func (s *Swarm) StreamSwarm() *ps.Swarm {
 // SetConnHandler assigns the handler for new connections.
 // See peerstream. You will rarely use this. See SetStreamHandler
 func (s *Swarm) SetConnHandler(handler ConnHandler) {
+	fmt.Println("*** SET CONNECTION HANDLER TRIGGER ***")
+	debug.PrintStack()
 
 	// handler is nil if user wants to clear the old handler.
 	if handler == nil {
